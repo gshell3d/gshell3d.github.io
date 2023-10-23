@@ -349,7 +349,7 @@
 
                     <div class="content has-text-justified" style="padding-top: 15px">
                         <p> 
-                        <img src="./static/teaser/mesh_extraction.png" height="55%"/>
+                        <img src="./static/teaser/mesh_extraction.png" height="80%" style="margin-left: auto;margin-right: auto;display: block;"/>
                         <div class="content has-text-justified" style="padding-top: 15px">
                             <p> 
                                 A non-watertight mesh can be seen as some island floating on a watertight shell. <br>
@@ -380,13 +380,13 @@
                         We show results on DeepFashion3D datasets. All topological details are almost perfectly reconstructed with G-Shell.
                     </p>
 
-                    <img src="./static/figures/recon_example1.png" height="55%"/>
-                    <img src="./static/figures/recon_example2.png" height="55%"/>
+                    <img src="./static/figures/recon_example1.png" height="80%" style="margin-left: auto;margin-right: auto;display: block;margin-bottom: 5px"/>
+                    <img src="./static/figures/recon_example2.png" height="80%" style="margin-left: auto;margin-right: auto;display: block;margin-bottom: 5px;"/>
 
                     <p>
                         Some seemly difficult shapes can also be easily reconstructed with G-Shell.
                     </p>
-                    <img src="./static/figures/rack.png" height="55%"/>
+                    <img src="./static/figures/rack.png" height="80%" style="margin-left: auto;margin-right: auto;display: block;margin-bottom: 5px;"/>
             </div>
 
 
@@ -396,7 +396,7 @@
                         Inverse rendering with G-Shell can produce watertight meshes and non-watertight meshes at the same time. 
                         If only the upper surface is visible, a single-layered mesh is reconstructed without adding any lower surface.
                   </p>
-                  <img src="./static/figures/winding.png" height="55%"/>
+                  <img src="./static/figures/winding.png" height="80%"/>
             </div>
 
 
@@ -406,7 +406,13 @@
                   <p>
                         G-Shell can be implemented with FlexiCubes for better mesh topology on non-watertight meshes.
                   </p>
-                  <img src="./static/figures/gflexicubes.png" height="55%"/>
+                  <img src="./static/figures/gflexicubes.png" height="80%"/>
+            </div>
+
+            
+
+            <div class="content has-text-justified">
+                <h2 class="title is-4">Simulation with G-Shell + FlexiCubes Coming Soon!</h2>
             </div>
         </div>
     </section>
@@ -425,7 +431,7 @@
                     Training G-MeshDiffusion is easy: simply collect a dataset with G-Shell-based reconstruction and train a 3D U-Net-based diffusion model.
                 </p>
             </div>
-            <img src="./static/figures/uncond_gen.png" width="60%" style="margin-left: auto;margin-right: auto;display: block;"/>
+            <img src="./static/figures/uncond_gen.png" width="90%" style="margin-left: auto;margin-right: auto;display: block;"/>
 
             <!-- <div class="container">
                 <div id="results-carousel" class="carousel results-carousel" slidesToShow=4>
@@ -458,7 +464,7 @@
                     G-MeshDiffusion captures the underlying semantics and learns to perform reasonable interpolation between samples.
                 </p>
             </div>
-            <img src="./static/figures/interp.png" width="60%" style="margin-left: auto;margin-right: auto;display: block;"/>
+            <img src="./static/figures/interp.png" width="90%" style="margin-left: auto;margin-right: auto;display: block;"/>
 
         </div>
     </section>
