@@ -317,17 +317,19 @@
             <div class="columns is-centered" style="margin-top: 15px">
                 <div class="column is-full-width">
                     <h2 class="title is-4">Method Overview</h2>
-                    <img src="./static/teaser/mesh_extraction.png" height="75%"/>
+                    <img src="./static/teaser/mesh_extraction.png" height="55%"/>
                     <div class="content has-text-justified" style="padding-top: 15px">
                         <p> 
                             A non-watertight mesh can be seen as some island floating on a watertight shell. <br>
+
+                            We define a manifold signed distance field (mSDF) on the shell. The desired open surface is therefore bounded by mSDF zero isolines. <br>
                             
-                            with manifold signed distance field (mSDF) defined on the shell, we can extract meshes from the surface.
+                            To extract non-watertight meshes is therefore to identify zero isolines.
                         </p>
                     </div>
 
 
-                    <img src="./static/teaser/lookup_table.png" height="75%"/>
+                    <img src="./static/teaser/lookup_table.png" height="55%"/>
                     <div class="content has-text-justified" style="padding-top: 15px">
                         <p> 
                             If we store both SDF and mSDF on the same 3D grid, we can augment Marching Cubes/Tetrahedra to extract non-watertight meshes. <br>
