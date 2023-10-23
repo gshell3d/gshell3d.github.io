@@ -316,7 +316,7 @@
             <!-- Overview. -->
             <div class="columns is-centered" style="margin-top: 15px">
                 <div class="column is-full-width">
-                    <h2 class="title is-4">Core Idea</h2>
+                    <h2 class="title is-4">Take-away Message</h2>
                     <div class="content has-text-justified" style="padding-top: 15px">
                         <p> 
                             G-Shell models both watertight and non-watertight meshes of different shape topology in a differentiable way. Mesh extraction with G-Shell is stable --
@@ -345,6 +345,23 @@
                         </p>
                     </div>
 
+                    <h2 class="title is-4">Core Idea</h2>
+
+                    <div class="content has-text-justified" style="padding-top: 15px">
+                        <p> 
+                        <img src="./static/teaser/mesh_extraction.png" height="55%"/>
+                        <div class="content has-text-justified" style="padding-top: 15px">
+                            <p> 
+                                A non-watertight mesh can be seen as some island floating on a watertight shell. <br>
+
+                                We define a manifold signed distance field (mSDF) on the shell. The desired open surface is therefore bounded by mSDF zero isolines. <br>
+
+                                To extract non-watertight meshes is therefore to identify zero isolines.
+                            </p>
+                        </div>
+                        </p>
+                    </div>
+
                 </div>
 
             </div>
@@ -352,30 +369,34 @@
         </div>
     </section>
 
+
+
     <section class="section">
         <div class="container is-max-desktop">
             <div class="content has-text-justified">
-                <h2 class="title is-4">Reconstruction</h2>
-            </div>
-            <br>
-            <div class="content has-text-justified">
-                <h2 class="title is-4">Show cases</h2>
-                  <p>
-                    
-                  </p>
-            </div>
+                <h2 class="title is-4">Reconstruction Show Cases</h2>
+                    <p>
+                        Rasterization-based inverse rendering with G-Shell can easily handle images rendered with realistic lighting and materials. <br>
+                        We show results on DeepFashion3D datasets. All topological details are almost perfectly reconstructed with G-Shell.
+                    </p>
 
-            <div class="content has-text-justified">
-                <h2 class="title is-4">Specular Lighting</h2>
-                  <p>
-                  </p>
+                    <img src="./static/teaser/recon_example1.png" height="55%"/>
+                    <img src="./static/teaser/recon_example2.png" height="55%"/>
+
+                    <p>
+                        Some seemly difficult shapes can also be easily reconstructed with G-Shell.
+                    </p>
+                    <img src="./static/teaser/rack.png" height="55%"/>
             </div>
 
 
             <div class="content has-text-justified">
                 <h2 class="title is-4">Hybrid Watertight and Non-Watertight Reconstruction</h2>
                   <p>
+                        Inverse rendering with G-Shell can produce watertight meshes and non-watertight meshes at the same time. 
+                        If only the upper surface is visible, a single-layered mesh is reconstructed without adding any lower surface.
                   </p>
+                  <img src="./static/teaser/winding.png" height="55%"/>
             </div>
 
 
@@ -383,7 +404,9 @@
             <div class="content has-text-justified">
                 <h2 class="title is-4">G-Shell with FlexiCubes</h2>
                   <p>
+                        G-Shell can be implemented with FlexiCubes for better mesh topology on non-watertight meshes.
                   </p>
+                  <img src="./static/teaser/gflexicubes.png" height="55%"/>
             </div>
         </div>
     </section>
@@ -396,7 +419,11 @@
             <br>
             <div class="content has-text-justified">
                 <h2 class="title is-4">Unconditional Generation</h2>
-                  
+                <p>
+                    The grid structure of G-Shell enables diffusion models. We propose G-MeshDiffusion, a diffusion model for non-watertight mesh generation. <br>
+                    
+                    Training G-MeshDiffusion is easy: simply collect a dataset with G-Shell-based reconstruction and train a 3D U-Net-based diffusion model.
+                </p>
             </div>
             <img src="./static/figures/uncond_gen.png" width="60%" style="margin-left: auto;margin-right: auto;display: block;"/>
 
@@ -427,6 +454,9 @@
 
             <div class="content has-text-justified">
                 <h2 class="title is-4">Interpolation</h2>
+                <p>
+                    G-MeshDiffusion captures the underlying semantics and learns to perform reasonable interpolation between samples.
+                </p>
             </div>
             <img src="./static/figures/interp.png" width="60%" style="margin-left: auto;margin-right: auto;display: block;"/>
 
