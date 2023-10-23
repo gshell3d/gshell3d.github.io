@@ -316,33 +316,32 @@
             <!-- Overview. -->
             <div class="columns is-centered" style="margin-top: 15px">
                 <div class="column is-full-width">
-                    <h2 class="title is-4">Method Overview</h2>
-                    <img src="./static/teaser/mesh_extraction.png" height="55%"/>
+                    <h2 class="title is-4">Core Idea</h2>
                     <div class="content has-text-justified" style="padding-top: 15px">
                         <p> 
-                            A non-watertight mesh can be seen as some island floating on a watertight shell. <br>
-
-                            We define a manifold signed distance field (mSDF) on the shell. The desired open surface is therefore bounded by mSDF zero isolines. <br>
+                            G-Shell models both watertight and non-watertight meshes of different shape topology in a differentiable way. Mesh extraction with G-Shell is stable --
                             
-                            To extract non-watertight meshes is therefore to identify zero isolines.
-                        </p>
-                    </div>
+                            no need to compute MLP gradients but simply do sign checks on grid vertices. <br>
+
+                            G-Shell enables
+                            <ol>
+                                <li>
+                                    Differentiable rasterization-based inverse rendering of non-watertight meshes. 
+                                    
+                                    No need to compute integrals on ray samples but simply rasterize your meshes in a parallel manner.
+
+                                    As a result, pysical-based inverse rendering is made easy with G-Shell.
+                                </li>
 
 
-                    <img src="./static/teaser/lookup_table.png" height="55%"/>
-                    <div class="content has-text-justified" style="padding-top: 15px">
-                        <p> 
-                            If we store both SDF and mSDF on the same 3D grid, we can augment Marching Cubes/Tetrahedra to extract non-watertight meshes. <br>
-                            
-                            In the figure above, 
-                            
-                            <ul>
-                                <li>Grid vertices with and without a red dot possess SDF values of opposite signs.</li>
-                                <li>Grid vertices with a green dot on watertight mesh vertices indicates negative mSDF value.</li>
-                              </ul>
-                              
-                            The pink regions represent the final extracted faces while the blue ones are the discarded
-                            regions on the watertight template mesh. Colored polygons other than triangles are cut along dashed lines.
+                                <li>
+                                    Template-free non-watertight generation. 
+                                    
+                                    A grid of SDF and manifold SDF (mSDF) scale values are sufficient to parameterize a mesh -- therefore, generation is simply to generate a grid of scalars.
+
+                                    Methods like diffusion models can be extended to non-watertight meshes without much effort.
+                                </li>
+                            </ol>
                         </p>
                     </div>
 
@@ -365,13 +364,6 @@
                     
                   </p>
             </div>
-
-            <div class="content has-text-justified">
-                <h2 class="title is-4">Evaluation</h2>
-                  <p>
-                  </p>
-            </div>
-
 
             <div class="content has-text-justified">
                 <h2 class="title is-4">Specular Lighting</h2>
