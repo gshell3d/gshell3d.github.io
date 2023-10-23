@@ -317,16 +317,30 @@
             <div class="columns is-centered" style="margin-top: 15px">
                 <div class="column is-full-width">
                     <h2 class="title is-4">Method Overview</h2>
-                    <img src="./static/teaser/mesh_extraction.png"/>
+                    <img src="./static/teaser/mesh_extraction.png" height="75%"/>
                     <div class="content has-text-justified" style="padding-top: 15px">
                         <p> 
+                            A non-watertight mesh can be seen as some island floating on a watertight shell. <br>
+                            
+                            with manifold signed distance field (mSDF) defined on the shell, we can extract meshes from the surface.
                         </p>
                     </div>
 
 
-                    <img src="./static/teaser/lookup_table.png"/>
+                    <img src="./static/teaser/lookup_table.png" height="75%"/>
                     <div class="content has-text-justified" style="padding-top: 15px">
                         <p> 
+                            If we store both SDF and mSDF on the same 3D grid, we can augment Marching Cubes/Tetrahedra to extract non-watertight meshes. <br>
+                            
+                            In the figure above, 
+                            
+                            <ul>
+                                <li>Grid vertices with and without a red dot possess SDF values of opposite signs.</li>
+                                <li>Grid vertices with a green dot on watertight mesh vertices indicates negative mSDF value.</li>
+                              </ul>
+                              
+                            The pink regions represent the final extracted faces while the blue ones are the discarded
+                            regions on the watertight template mesh. Colored polygons other than triangles are cut along dashed lines.
                         </p>
                     </div>
 
